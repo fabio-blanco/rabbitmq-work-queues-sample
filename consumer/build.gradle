@@ -1,0 +1,18 @@
+plugins {
+    id 'application'
+    id 'rabbitmq-work-queues-sample.java-conventions'
+}
+
+application {
+    mainClass = 'br.com.globalbyte.samples.rabbit.wq.Worker'
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "br.com.globalbyte.samples.rabbit.wq.Worker"
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

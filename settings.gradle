@@ -1,0 +1,4 @@
+rootProject.name = 'rabbitmq-work-queues-sample'
+include 'consumer'
+include 'producer'
+
